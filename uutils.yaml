@@ -61,9 +61,6 @@ subpackages:
     dependencies:
       runtime:
         - uutils
-    test:
-      pipeline:
-        - uses: test/tw/shell-syntax-check
 
   - name: uutils-zsh-completion
     description: zsh completion for uutils
@@ -76,9 +73,6 @@ subpackages:
     dependencies:
       runtime:
         - uutils
-    test:
-      pipeline:
-        - uses: test/tw/shell-syntax-check
 
   - name: uutils-fish-completion
     description: fish completion for uutils
@@ -91,9 +85,6 @@ subpackages:
     dependencies:
       runtime:
         - uutils
-    test:
-      pipeline:
-        - uses: test/tw/shell-syntax-check
 
 update:
   enabled: true

@@ -62,9 +62,6 @@ subpackages:
   - name: openrc-dbg
     pipeline:
       - uses: split/debug
-    test:
-      pipeline:
-        - uses: test/tw/debugpackage
     dependencies:
       runtime:
         - merged-bin
@@ -158,6 +155,9 @@ subpackages:
         - merged-lib
         - merged-sbin
         - wolfi-baselayout
+    test:
+      pipeline:
+        - uses: test/tw/shell-syntax-check
 
   - name: openrc-zsh-completion
     description: zsh completion for openrc
@@ -171,6 +171,9 @@ subpackages:
         - merged-lib
         - merged-sbin
         - wolfi-baselayout
+    test:
+      pipeline:
+        - uses: test/tw/shell-syntax-check
 
 update:
   enabled: true

@@ -1,6 +1,6 @@
 package:
   name: flyway
-  version: "12.0.0"
+  version: "12.0.2"
   epoch: 0 # go/wolfi-rsc/flyway
   description: "Flyway is a database migration tool to evolve your database schema easily and reliably across all your instances."
   copyright:
@@ -40,7 +40,7 @@ pipeline:
     with:
       repository: https://github.com/flyway/flyway
       tag: flyway-${{package.version}}
-      expected-commit: d003178d29f9d19a8381f70d4f0a44fdae08dd34
+      expected-commit: 635355cfe317236b342ecd3897134d459d7d9f86
 
   - uses: maven/pombump
     with:
@@ -48,7 +48,7 @@ pipeline:
 
   - name: Build
     runs: |
-      ./mvnw -B clean dependency:copy-dependencies package -e --file pom.xml -DskipTests -pl !flyway-database/flyway-database-mongodb
+      ./mvnw -B clean dependency:copy-dependencies package -e --file pom.xml -DskipTests -pl !flyway-database/flyway-database-nc-mongodb
 
   - name: Create directories and move scripts
     runs: |

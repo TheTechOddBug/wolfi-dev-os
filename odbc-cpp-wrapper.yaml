@@ -40,6 +40,9 @@ subpackages:
     pipeline:
       - uses: split/static
     description: odbc-cpp-wrapper static
+    test:
+      pipeline:
+        - uses: test/tw/staticpackage
 
   - name: odbc-cpp-wrapper-dev
     pipeline:

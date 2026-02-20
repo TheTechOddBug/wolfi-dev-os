@@ -67,6 +67,9 @@ subpackages:
     pipeline:
       - uses: split/static
     description: snmalloc static library
+    test:
+      pipeline:
+        - uses: test/tw/staticpackage
 
   - name: snmalloc-dev
     pipeline:

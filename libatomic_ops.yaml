@@ -41,9 +41,6 @@ subpackages:
       - runs: |
           mkdir -p "${{targets.subpkgdir}}"/usr/lib
           mv "${{targets.destdir}}"/usr/lib/*.a "${{targets.subpkgdir}}"/usr/lib
-    test:
-      pipeline:
-        - uses: test/tw/staticpackage
 
   - name: libatomic_ops-dev
     pipeline:

@@ -32,9 +32,6 @@ subpackages:
     description: "A modern, C++-native, test framework - static libraries"
     pipeline:
       - uses: split/static
-    test:
-      pipeline:
-        - uses: test/tw/staticpackage
 
   - name: Catch2-dev
     description: "A modern, C++-native, test framework - development headers"

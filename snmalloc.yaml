@@ -67,14 +67,14 @@ subpackages:
     pipeline:
       - uses: split/static
     description: snmalloc static library
-    test:
-      pipeline:
-        - uses: test/tw/staticpackage
 
   - name: snmalloc-dev
     pipeline:
       - uses: split/dev
     description: header files of snmallac
+    test:
+      pipeline:
+        - uses: test/pkgconf
 
 test:
   environment:

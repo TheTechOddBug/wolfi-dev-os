@@ -35,14 +35,14 @@ subpackages:
     description: "Portable, simple and extensible C++ logging library - static libraries"
     pipeline:
       - uses: split/static
-    test:
-      pipeline:
-        - uses: test/tw/emptypackage
 
   - name: plog-dev
     description: "Portable, simple and extensible C++ logging library - development headers"
     pipeline:
       - uses: split/dev
+    test:
+      pipeline:
+        - uses: test/pkgconf
 
 update:
   enabled: true

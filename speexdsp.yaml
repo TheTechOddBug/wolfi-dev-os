@@ -57,11 +57,6 @@ subpackages:
         - uses: test/pkgconf
         - uses: test/tw/ldd-check
 
-  - name: speexdsp-doc
-    pipeline:
-      - uses: split/manpages
-    description: speexdsp manpages
-
 update:
   enabled: true
   release-monitor:

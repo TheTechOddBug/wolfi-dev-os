@@ -52,11 +52,6 @@ subpackages:
       pipeline:
         - uses: test/pkgconf
 
-  - name: ${{package.name}}-doc
-    description: vectorscan documentation
-    pipeline:
-      - uses: split/manpages
-
 test:
   pipeline:
     - uses: test/no-docs

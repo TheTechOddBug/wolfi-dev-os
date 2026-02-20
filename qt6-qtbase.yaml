@@ -111,10 +111,6 @@ subpackages:
       pipeline:
         - uses: test/tw/ldd-check
 
-  - name: qt6-qtbase-doc
-    pipeline:
-      - uses: split/manpages
-
 update:
   enabled: true
   github:

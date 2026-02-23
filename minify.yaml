@@ -29,6 +29,9 @@ subpackages:
           _out="${{targets.subpkgdir}}"/usr/share/bash-completion/completions
           mkdir -p $_out
           install -Dm644 ./cmd/minify/bash_completion $_out
+    test:
+      pipeline:
+        - uses: test/tw/shell-syntax-check
 
 update:
   enabled: true

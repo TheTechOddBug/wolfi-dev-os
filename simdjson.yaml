@@ -1,6 +1,6 @@
 package:
   name: simdjson
-  version: "4.6.10"
+  version: "4.6.11"
   epoch: 0 # glibc: 2.43->2.44
   description: Parses Gigabytes of JSON per second
   copyright:
@@ -18,7 +18,7 @@ environment:
 pipeline:
   - uses: git-checkout
     with:
-      expected-commit: 41717da488fcb09af4c4a081a77a58b4f7319b2c
+      expected-commit: f5de14f09256982933af2849beb43778bd421ca7
       repository: https://github.com/simdjson/simdjson/
       tag: v${{package.version}}
 

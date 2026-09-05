@@ -1,7 +1,7 @@
 package:
   name: perl-libwww
   version: "6.83"
-  epoch: 4 # fix test: lwp-dump exits 0 for non-absolute URLs
+  epoch: 5 # go/wolfi-rsc/perl-libwww
   description: The World-Wide Web library for Perl
   copyright:
     - license: GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -21,7 +21,7 @@ package:
       - perl-www-robotrules
   resources:
     cpu: "1"
-    memory: 2Gi
+    memory: 3Gi
 
 environment:
   contents:

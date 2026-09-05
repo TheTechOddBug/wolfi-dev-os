@@ -1,7 +1,7 @@
 package:
   name: perl-module-runtime-conflicts
   version: "0.003"
-  epoch: 3 # go/wolfi-rsc/perl-module-runtime-conflicts
+  epoch: 4 # go/wolfi-rsc/perl-module-runtime-conflicts
   description: "Provide information on conflicts for Module::Runtime"
   copyright:
     - license: GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -12,10 +12,10 @@ package:
       - perl-module-runtime
   resources:
     cpu: "1"
-    memory: 1Gi
+    memory: 3Gi
   test-resources:
     cpu: "1"
-    memory: 1Gi
+    memory: 2Gi
 
 environment:
   contents:

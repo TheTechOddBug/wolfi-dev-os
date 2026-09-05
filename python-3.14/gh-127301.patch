@@ -5,7 +5,7 @@ builtin HACL* HMAC that CPython 3.14 added after the upstream PR was
 written. See Lib/test/_test_hashlib_fips.py for the regression tests.
 
 diff --git a/Lib/hashlib.py b/Lib/hashlib.py
-index 0e9bd98..72665b9 100644
+index 0e9bd98aa1f..43c4cadb169 100644
 --- a/Lib/hashlib.py
 +++ b/Lib/hashlib.py
 @@ -79,6 +79,23 @@
@@ -96,7 +96,7 @@ index 0e9bd98..72665b9 100644
  try:
      # OpenSSL's PKCS5_PBKDF2_HMAC requires OpenSSL 1.0+ with HMAC and SHA
 diff --git a/Lib/hmac.py b/Lib/hmac.py
-index 2d6016c..3bdedfa 100644
+index 2d6016cda11..3bdedfa4c22 100644
 --- a/Lib/hmac.py
 +++ b/Lib/hmac.py
 @@ -18,6 +18,14 @@
@@ -138,7 +138,7 @@ index 2d6016c..3bdedfa 100644
          try:
 diff --git a/Lib/test/_test_hashlib_fips.py b/Lib/test/_test_hashlib_fips.py
 new file mode 100644
-index 0000000..71966c6
+index 00000000000..71966c68b69
 --- /dev/null
 +++ b/Lib/test/_test_hashlib_fips.py
 @@ -0,0 +1,95 @@
@@ -239,10 +239,10 @@ index 0000000..71966c6
 +    unittest.main()
 diff --git a/Lib/test/hashlibdata/openssl.cnf b/Lib/test/hashlibdata/openssl.cnf
 new file mode 100644
-index 0000000..9a936dd
+index 00000000000..7ff1102b2fa
 --- /dev/null
 +++ b/Lib/test/hashlibdata/openssl.cnf
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,23 @@
 +# Activate base provider only, with default properties fips=yes. It
 +# means that fips mode is on, and no digest implementations are
 +# available. Perfect for mock testing builtin FIPS wrappers.
@@ -256,14 +256,18 @@ index 0000000..9a936dd
 +
 +[provider_sect]
 +base = base_sect
++default = default_sect
 +
 +[base_sect]
++activate = 1
++
++[default_sect]
 +activate = 1
 +
 +[algorithm_sect]
 +default_properties = fips=yes
 diff --git a/Lib/test/support/script_helper.py b/Lib/test/support/script_helper.py
-index 46ce950..7b83c8e 100644
+index 46ce950433d..7b83c8e0632 100644
 --- a/Lib/test/support/script_helper.py
 +++ b/Lib/test/support/script_helper.py
 @@ -303,7 +303,14 @@ def make_zip_pkg(zip_dir, zip_basename, pkg_name, script_basename,
@@ -292,7 +296,7 @@ index 46ce950..7b83c8e 100644
                flush=True)
          if proc.returncode:
 diff --git a/Lib/test/test_hashlib.py b/Lib/test/test_hashlib.py
-index c7d7b80..d3777b5 100644
+index fa13b553c88..787b4ca27cd 100644
 --- a/Lib/test/test_hashlib.py
 +++ b/Lib/test/test_hashlib.py
 @@ -24,6 +24,7 @@
@@ -323,7 +327,7 @@ index c7d7b80..d3777b5 100644
  class KDFTests(unittest.TestCase):
  
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index 526d500..20fb9e0 100644
+index 526d500fe08..20fb9e0b048 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
 @@ -2606,6 +2606,7 @@ TESTSUBDIRS=	idlelib/idle_test \
@@ -336,7 +340,7 @@ index 526d500..20fb9e0 100644
  		test/mathdata \
 diff --git a/Misc/NEWS.d/next/Library/2024-11-26-16-31-40.gh-issue-127298.jqYJvn.rst b/Misc/NEWS.d/next/Library/2024-11-26-16-31-40.gh-issue-127298.jqYJvn.rst
 new file mode 100644
-index 0000000..4faaa57
+index 00000000000..4faaa575483
 --- /dev/null
 +++ b/Misc/NEWS.d/next/Library/2024-11-26-16-31-40.gh-issue-127298.jqYJvn.rst
 @@ -0,0 +1,13 @@

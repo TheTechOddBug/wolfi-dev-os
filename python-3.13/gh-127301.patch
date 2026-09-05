@@ -163,10 +163,10 @@ index 00000000000..92537245954
 +    unittest.main()
 diff --git a/Lib/test/hashlibdata/openssl.cnf b/Lib/test/hashlibdata/openssl.cnf
 new file mode 100644
-index 00000000000..9a936ddc5ef
+index 00000000000..7ff1102b2fa
 --- /dev/null
 +++ b/Lib/test/hashlibdata/openssl.cnf
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,23 @@
 +# Activate base provider only, with default properties fips=yes. It
 +# means that fips mode is on, and no digest implementations are
 +# available. Perfect for mock testing builtin FIPS wrappers.
@@ -180,8 +180,12 @@ index 00000000000..9a936ddc5ef
 +
 +[provider_sect]
 +base = base_sect
++default = default_sect
 +
 +[base_sect]
++activate = 1
++
++[default_sect]
 +activate = 1
 +
 +[algorithm_sect]

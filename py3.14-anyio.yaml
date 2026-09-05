@@ -1,7 +1,7 @@
 # Generated from https://pypi.org/project/anyio/
 package:
   name: py3.14-anyio
-  version: "4.15.0"
+  version: "4.15.1"
   epoch: 0
   description: High level compatibility layer for multiple asynchronous event loop implementations
   copyright:
@@ -29,7 +29,7 @@ pipeline:
     with:
       repository: https://github.com/agronholm/anyio
       tag: ${{package.version}}
-      expected-commit: 928366259543412a2deb1e2ba09ea45ffa92ef4f
+      expected-commit: ffcd1542cd6d127980205f90a0100078849dd703
 
   - uses: py/pip-build-install
     with:

@@ -1,7 +1,7 @@
 package:
   name: py3-peewee
-  version: "4.4.0"
-  epoch: 1 # glibc: 2.43->2.44
+  version: "4.5.0"
+  epoch: 0 # glibc: 2.43->2.44
   description: a little orm
   copyright:
     - license: MIT
@@ -37,7 +37,7 @@ pipeline:
     with:
       repository: https://github.com/coleifer/peewee
       tag: ${{package.version}}
-      expected-commit: 942d9c510ed7accce6fc65afee6023d25a69d5fa
+      expected-commit: 18061eaee7eae96d1a2432b75fc1a371adcaa0bb
 
 subpackages:
   - range: py-versions

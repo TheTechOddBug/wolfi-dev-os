@@ -1,12 +1,17 @@
 package:
   name: py3-mistune
   version: "3.3.4"
-  epoch: 0
+  epoch: 1 # go/wolfi-rsc/py3-mistune
   description: A sane and fast Markdown parser with useful plugins and renderers
   copyright:
     - license: BSD-3-Clause
   dependencies:
     provider-priority: 0
+  resources:
+    cpu: "1"
+  test-resources:
+    cpu: "1"
+    memory: 1Gi
 
 vars:
   pypi-package: mistune

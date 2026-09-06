@@ -2,13 +2,15 @@
 package:
   name: ruby3.4-dotenv
   version: "3.2.0"
-  epoch: 2 # template variable and tag-filter-prefix fixes
+  epoch: 3 # go/wolfi-rsc/ruby3.4-dotenv
   description: Loads environment variables from `.env`.
   copyright:
     - license: MIT
   resources:
     cpu: "1"
-    memory: 2Gi
+    memory: 4Gi
+  test-resources:
+    cpu: "1"
 
 var-transforms:
   - from: ${{package.name}}

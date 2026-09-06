@@ -1,7 +1,7 @@
 package:
   name: ncurses
-  version: "6.6.20260829"
-  epoch: 1 # glibc: 2.43->2.44
+  version: "6.6.20260905"
+  epoch: 0 # glibc: 2.43->2.44
   description: "console display library"
   copyright:
     - license: MIT
@@ -48,7 +48,7 @@ vars:
 pipeline:
   - uses: git-checkout
     with:
-      expected-commit: 3cdf9706d3844f603b8a5f7b8dd06257b5b4515d
+      expected-commit: f17a54d742cc7614d8d29b66068a8443fe220630
       repository: https://github.com/ThomasDickey/ncurses-snapshots
       tag: v${{vars.tag-version}}
 

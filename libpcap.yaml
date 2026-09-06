@@ -1,7 +1,7 @@
 package:
   name: libpcap
-  version: "1.10.6"
-  epoch: 3 # glibc: 2.43->2.44
+  version: "1.10.7"
+  epoch: 0 # glibc: 2.43->2.44
   description: A system-independent interface for user-level packet capture
   copyright:
     - license: BSD-3-Clause
@@ -24,7 +24,7 @@ pipeline:
     with:
       repository: https://github.com/the-tcpdump-group/libpcap.git
       tag: libpcap-${{package.version}}
-      expected-commit: a999701dca5c873779281938baee6bc185a8d4dc
+      expected-commit: 1926f4163e4eef978c71fde28a3f6d51fff183a8
 
   - uses: patch
     with:

@@ -1,7 +1,7 @@
 package:
   name: su-exec
   version: "0.3"
-  epoch: 3 # glibc: 2.43->2.44
+  epoch: 4 # go/wolfi-rsc/su-exec
   description: switch user and group id, setgroups and exec
   copyright:
     - license: MIT
@@ -11,7 +11,7 @@ package:
       - wolfi-baselayout
   resources:
     cpu: "1"
-    memory: 2Gi
+    memory: 4Gi
 
 environment:
   contents:

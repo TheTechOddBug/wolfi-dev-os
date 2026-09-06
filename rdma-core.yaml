@@ -1,7 +1,7 @@
 package:
   name: rdma-core
-  version: "64.0"
-  epoch: 2 # glibc: 2.43->2.44
+  version: "65.0"
+  epoch: 0 # glibc: 2.43->2.44
   description: userspace components for the Linux Kernel's drivers/infiniband subsystem
   copyright:
     - license: BSD-2-Clause
@@ -31,7 +31,7 @@ pipeline:
     with:
       repository: https://github.com/linux-rdma/rdma-core
       tag: v${{package.version}}
-      expected-commit: f272237493ef309984036f7b85655e11104c61c8
+      expected-commit: 58e40801bfed5a8befc0881594820fa0a0baa4a1
 
   - uses: cmake/configure
     with:
